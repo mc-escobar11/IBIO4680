@@ -6,6 +6,7 @@ El comando ```grep``` es empleado para realizar búsquedas de texto. Este busca 
 
 ## Punto 2
 
+hfjef
 ## Punto 3
 
 El archivo ```etc/passwd``` contiene la información de todos los usuarios del sistema. En este caso queremos saber cuantos login users existen.

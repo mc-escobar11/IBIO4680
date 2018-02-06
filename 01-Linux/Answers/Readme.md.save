@@ -1,0 +1,17 @@
+#Laboratorio 1 - Linux
+##Punto 1
+
+##Punto 2
+##Punto 3
+La ruta etc/passwd contiene información de cada cuenta de usuario. En este caso decidimos contar únicamente los login users.
+Para esto primero debemos encontrar el user ID mínimo para que un usuario sea considerado login user 
+https://www.cyberciti.biz/faq/linux-list-users-command/  
+##Punto 4
+##Punto 5
+##Punto 6
+##Punto 7
+##Punto 8
+##Punto 9
+##Punto 10
+
+![prueba de imagenes](https://github.com/mc-escobar11/IBIO4680/blob/master/01-Linux/Answers/images/images/p_10.png?raw=true)
