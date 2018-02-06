@@ -5,8 +5,8 @@
 El comando ```grep``` es empleado para realizar búsquedas de texto. Este busca en un archivo o directiorio específico las líneas que contienen un match para una palabra o frase determinada. [Referencia](https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/)
 
 ## Punto 2
+aaaa
 
-hfjef
 ## Punto 3
 
 El archivo ```etc/passwd``` contiene la información de todos los usuarios del sistema. En este caso queremos saber cuantos login users existen.
@@ -28,6 +28,17 @@ El resultado es 11 login users en el server
 [Referencia](https://unix.stackexchange.com/questions/144705/use-cut-to-extract-a-list-from-etc-passwd ) 
 
 ## Punto 4
+
+El siguiente comando permite obtener una tabla con usuarios y shells organizados por shell. El archivo /etc/passwd contiene los usuarios y los shells en las columnas 1 y 7. Luego se cambia el separador ":" por espacios entre usuarios y shells para obtener una lista con dos columnas. Finalmente se organiza la lista con respecto a la columna 2 que corresponde a los shells.    
+
+```bash
+cut -f 1,7 -d: /etc/passwd | tr ":" " " |sort -k 2 
+```
+El resultado es el siguiente:
+
+![punto 4](https://github.com/mc-escobar11/IBIO4680/blob/master/01-Linux/Answers/images/images/p_4.png?raw=true)
+
+[Referencia](https://unix.stackexchange.com/questions/144705/use-cut-to-extract-a-list-from-etc-passwd
 
 ## Punto 5
 
