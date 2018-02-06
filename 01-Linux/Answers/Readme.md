@@ -20,5 +20,5 @@ Ahora, se extrae del file solamente los login users, es decir los users cuyo UID
    ```
 El resultado es 11 login users en el server
 
-![punto 3] (https://github.com/mc-escobar11/IBIO4680/blob/master/01-Linux/Answers/images/images/p_10.png?raw=true)
+![punto 3](https://github.com/mc-escobar11/IBIO4680/blob/master/01-Linux/Answers/images/images/p_10.png?raw=true)
 
