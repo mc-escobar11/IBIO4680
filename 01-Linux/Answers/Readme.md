@@ -41,3 +41,62 @@ Para probar el script, se creó una copia de una imagen en la carpeta ```BSR/BSD
 ![punto5](https://github.com/mc-escobar11/IBIO4680/blob/master/01-Linux/Answers/images/images/p_5_1.png?raw=true)
 
 [Referencia](https://superuser.com/questions/487810/find-all-duplicate-files-by-md5-hash)
+
+## Punto 6
+
+## Punto 7
+
+Para encontrar el disk size del dataset se emplea el comando ```du -sh``` el cual informa el espacio que determinado file ocupa. ```-s``` se usa para obtener solo un resultado resumido y ```-h```da el resultado de forma legible (human readable).El disk size fue de 71M.  [Referencia](https://unix.stackexchange.com/questions/185764/how-do-i-get-the-size-of-a-directory-on-the-command-line)
+
+![punto7](https://github.com/mc-escobar11/IBIO4680/blob/master/01-Linux/Answers/images/images/p_7.png?raw=true)
+
+Para encontrar el número de imagenes hay en el directorio primero se listan todos los archivos con ```ls -Rl```, después se seleccionan únicamente los archivos terminados en .jpg con ```grep```. Por último, se cuentan la cantidad de archivos con ````wc -l```
+
+```bash
+   ls -Rl ~/BSR/BSDS500/data/images/ | grep  jpg | wc -l  
+   ```
+![punto7](https://github.com/mc-escobar11/IBIO4680/blob/master/01-Linux/Answers/images/images/p_7_1.png?raw=true)
+
+## Punto 8
+
+## Punto 9
+
+Para encontrar la cantidad de imágenes que se encuentran en cada orientación primero se encuentra una lista de todas las imágenes disponibles. Después, en un ciclo se identifica cada imagen por medio de ```identify``` y con ```%[fx:(h>w)]```se evalúa si la altura de la imagen es mayor al ancho. De ser cierto, la imagen se encuentra en orientación portrait, de lo contrario se encuentra en landscape. 
+
+```bash
+   #! /bin/bash
+por=0 
+lan=0 
+
+for f in ./BSR/BSDS500/data/images/*/*.jpg 
+
+do 
+
+  r=$(identify -format '%[fx:(h>w)]' "$f") 
+
+  if [[ r -eq 1 ]] 
+
+  then 
+
+        por=$((por+1)) 
+
+  else 
+
+        lan=$((lan+1)) 
+
+fi 
+
+done 
+
+  
+
+echo hay  "$por" imagenes en orientacion portrait 
+
+echo hay "$lan" imagenes en orientacion landscape 
+ ```
+El resultado fue
+
+![punto9](https://github.com/mc-escobar11/IBIO4680/blob/master/01-Linux/Answers/images/images/p_9_1.png?raw=true)
+
+[Referencia](https://unix.stackexchange.com/questions/294341/shell-script-to-separate-and-move-landscape-and-portrait-images)
+
