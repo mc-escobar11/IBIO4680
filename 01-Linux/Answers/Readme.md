@@ -2,6 +2,8 @@
 
 ## Punto 1
 
+El comando ```grep``` es empleado para realizar búsquedas de texto. Este busca en un archivo o directiorio específico las líneas que contienen un match para una palabra o frase determinada. [Referencia](https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/)
+
 ## Punto 2
 
 ## Punto 3
@@ -50,7 +52,7 @@ Para encontrar el disk size del dataset se emplea el comando ```du -sh``` el cua
 
 ![punto7](https://github.com/mc-escobar11/IBIO4680/blob/master/01-Linux/Answers/images/images/p_7.png?raw=true)
 
-Para encontrar el número de imagenes hay en el directorio primero se listan todos los archivos con ```ls -Rl```, después se seleccionan únicamente los archivos terminados en .jpg con ```grep```. Por último, se cuentan la cantidad de archivos con ````wc -l```
+Para encontrar el número de imagenes hay en el directorio primero se listan todos los archivos con ```ls -Rl```, después se seleccionan únicamente los archivos terminados en .jpg con ```grep```. Por último, se cuentan la cantidad de archivos con ```wc -l```
 
 ```bash
    ls -Rl ~/BSR/BSDS500/data/images/ | grep  jpg | wc -l  
