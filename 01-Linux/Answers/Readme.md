@@ -170,7 +170,7 @@ for im in $rutas
 done
 
  ```
-Primero se elimina el directorio cropped en caso de que ya exista y luego se crea con ```mkdir```. Se copian todos los archivos .jpg en la nueva carpeta y se obtienen sus rutas. Finalmente se cortan todas las imágenes para que queden de la dimensión deseada desde el centro de la imágen. 
+Primero se elimina el directorio cropped en caso de que ya exista y luego se crea con ```mkdir```. Se copian todos los archivos .jpg en la nueva carpeta y se obtienen sus rutas. Finalmente se cortan todas las imágenes para que queden de la dimensión deseada desde el centro de la imagen. 
   
 [Referencia1](https://unix.stackexchange.com/questions/101580/how-do-i-echo-just-1-column-of-output-from-ls-command)
 [Referencia2](https://stackoverflow.com/questions/18581014/how-to-use-mogrify-to-crop-an-image)
