@@ -6,9 +6,7 @@ El comando ```grep``` es empleado para realizar búsquedas de texto. Este busca 
 
 ## Punto 2
 
-La linea ```#!/bin/bash``` al comienzo de los scripts le permite saber al shell con qué programa debería interpretar el script al ejecutarlo. 
-
-[Referencia](https://stackoverflow.com/questions/13872048/bash-script-what-does-bin-bash-mean)
+La linea ```#!/bin/bash``` al comienzo de los scripts le permite saber al shell con qué programa debería interpretar el script al ejecutarlo. [Referencia](https://stackoverflow.com/questions/13872048/bash-script-what-does-bin-bash-mean)
 
 ## Punto 3
 
@@ -41,7 +39,7 @@ El resultado es el siguiente:
 
 ![punto 4](https://github.com/mc-escobar11/IBIO4680/blob/master/01-Linux/Answers/images/images/p_4.png?raw=true)
 
-[Referencia](https://unix.stackexchange.com/questions/144705/use-cut-to-extract-a-list-from-etc-passwd
+[Referencia](https://unix.stackexchange.com/questions/144705/use-cut-to-extract-a-list-from-etc-passwd)
 
 ## Punto 5
 
@@ -88,13 +86,13 @@ Para encontrar el número de imagenes hay en el directorio primero se listan tod
 
 ## Punto 8
 
-Estando en el directorio con las  imágenes, se ejecutó lo siguiente para guardar las rutas de las mismas en una variable. 
+Estando en el directorio con las  imágenes, se ejecutó la línea de código a continuación para guardar las rutas de las mismas en una variable. 
 
 ```bash
    rutas=`ls -d -1 $PWD/*.*`
 ```
 
-Luego se emplea un ciclo para obtener la resolución y el formato de las imágenes por medio de  ```identify```  
+Luego se empleó un ciclo para obtener la resolución y el formato de las imágenes por medio de  ```identify```  
 
 ```bash
 for im in $rutas; do identify $im; done    
@@ -174,3 +172,5 @@ done
  ```
 Primero se elimina el directorio cropped en caso de que ya exista y luego se crea con ```mkdir```. Se copian todos los archivos .jpg en la nueva carpeta y se obtienen sus rutas. Finalmente se cortan todas las imágenes para que queden de la dimensión deseada desde el centro de la imágen. 
   
+[Referencia1](https://unix.stackexchange.com/questions/101580/how-do-i-echo-just-1-column-of-output-from-ls-command)
+[Referencia2](https://stackoverflow.com/questions/18581014/how-to-use-mogrify-to-crop-an-image)
