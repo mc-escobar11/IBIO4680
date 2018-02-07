@@ -5,7 +5,10 @@
 El comando ```grep``` es empleado para realizar búsquedas de texto. Este busca en un archivo o directiorio específico las líneas que contienen un match para una palabra o frase determinada. [Referencia](https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/)
 
 ## Punto 2
-aaaa
+
+La linea ```#!/bin/bash``` al comienzo de los scripts le permite saber al shell con qué programa debería interpretar el script al ejecutarlo. 
+
+[Referencia](https://stackoverflow.com/questions/13872048/bash-script-what-does-bin-bash-mean)
 
 ## Punto 3
 
@@ -58,6 +61,18 @@ Para probar el script, se creó una copia de una imagen en la carpeta ```BSR/BSD
 
 ## Punto 6
 
+Luego de descargar la base de datos bsds500, se copió el directorio a la terminal y después a la máquina usando las lineas:
+
+```bash
+   scp "/drives/C/Users/Camila/Downloads/BSR_bsds500.tgz" .
+   scp ./BSR_bsds500.tgz camilalaura@157.253.63.53:~
+```
+Posteriormente se descomprimió con ```tar```:
+
+```bash
+   tar -xf BSR_bsds500.tgz 
+``` 
+
 ## Punto 7
 
 Para encontrar el disk size del dataset se emplea el comando ```du -sh``` el cual informa el espacio que determinado file ocupa. ```-s``` se usa para obtener solo un resultado resumido y ```-h```da el resultado de forma legible (human readable).El disk size fue de 71M.  [Referencia](https://unix.stackexchange.com/questions/185764/how-do-i-get-the-size-of-a-directory-on-the-command-line)
@@ -72,6 +87,23 @@ Para encontrar el número de imagenes hay en el directorio primero se listan tod
 ![punto7](https://github.com/mc-escobar11/IBIO4680/blob/master/01-Linux/Answers/images/images/p_7_1.png?raw=true)
 
 ## Punto 8
+
+Estando en el directorio con las  imágenes, se ejecutó lo siguiente para guardar las rutas de las mismas en una variable. 
+
+```bash
+   rutas=`ls -d -1 $PWD/*.*`
+```
+
+Luego se emplea un ciclo para obtener la resolución y el formato de las imágenes por medio de  ```identify```  
+
+```bash
+for im in $rutas; do identify $im; done    
+```
+El resultado obtenido muestra que el formato de las imágenes es jpeg y que su resolución es de 481x321 o 321x481 dependiendo del archivo.
+
+![punto8](https://github.com/mc-escobar11/IBIO4680/blob/master/01-Linux/Answers/images/images/p_8.png?raw=true)
+
+[Referencia](https://stackoverflow.com/questions/246215/how-can-i-list-files-with-their-absolute-path-in-linux)
 
 ## Punto 9
 
@@ -114,3 +146,31 @@ El resultado fue
 
 [Referencia](https://unix.stackexchange.com/questions/294341/shell-script-to-separate-and-move-landscape-and-portrait-images)
 
+## Punto 10
+
+Para cortar las imágenes de manera que su nuevo tamaño fuera de 256x256, se empleó el script:
+
+```bash
+#! /bin/bash
+
+rm -r cropped 2>/dev/null
+
+mkdir cropped
+
+cp ./BSR/BSDS500/data/images/*/*.jpg cropped
+
+cd ./cropped
+
+rutas=`ls -Rl | awk '{ print $9}'`
+
+for im in $rutas
+
+        do
+
+        convert  -crop 256x256+0+0 $im $im
+
+done
+
+ ```
+Primero se elimina el directorio cropped en caso de que ya exista y luego se crea con ```mkdir```. Se copian todos los archivos .jpg en la nueva carpeta y se obtienen sus rutas. Finalmente se cortan todas las imágenes para que queden de la dimensión deseada desde el centro de la imágen. 
+  
