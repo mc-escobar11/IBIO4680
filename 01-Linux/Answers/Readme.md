@@ -172,4 +172,8 @@ done
  ```
 Primero se elimina el directorio cropped en caso de que ya exista y luego se crea con ```mkdir```. Se copian todos los archivos .jpg en la nueva carpeta y se obtienen sus rutas. Finalmente se cortan todas las imÃ¡genes para que queden de la dimensiÃ³n deseada desde el centro de la imagen. 
   
+Para corroborar el funcionamiento del método se realizó ```identify``` en varios archivos de la carpeta cropped
+
+![Punto10](https://github.com/mc-escobar11/IBIO4680/blob/master/01-Linux/Answers/images/images/p_10_1.jpg?raw=true)
+  
 [Referencia1](https://unix.stackexchange.com/questions/101580/how-do-i-echo-just-1-column-of-output-from-ls-command) [Referencia2](https://stackoverflow.com/questions/18581014/how-to-use-mogrify-to-crop-an-image)
