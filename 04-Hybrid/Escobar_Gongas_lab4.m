@@ -1,4 +1,5 @@
 %First part: Gaussian pyramid
+% Read images and convert them to grayscale
 im1=imread('.\images\Imagen2.jpg');
 im1=rgb2gray(im1);
 im2=imread('.\images\Imagen1.jpg');
@@ -22,21 +23,26 @@ final3=impyramid(final2,'reduce');
 final4=impyramid(final3,'reduce');
 final5=impyramid(final4,'reduce');
 
+%put all pyramid results with the same height
 final2=[zeros(size(final2));final2];
 final3=[zeros(964-size(final3,1),size(final3,2));final3];
 final4=[zeros(964-size(final4,1),size(final4,2));final4];
 final5=[zeros(964-size(final5,1),size(final5,2));final5];
 
+%Contatenate pyramid
 piramide=cat(2,final1,final2,final3,final4,final5);
 figure
 imshow(piramide)
 %%
 %Part 2: Blended Image formation
+% Read images and convert them to grayscale
 im1=imread('.\images\Imagen3.jpg');
 im2=imread('.\images\Imagen4.jpg');
 im1=rgb2gray(im1);
 im2=rgb2gray(im2);
+% Vector with Laplacian images from pyramid 
 l={};
+% Conncatenated halves ofimages
 imagen= cat(2,im1,im2);
 % Reduction of image with gaussian pyramid
 for i=1:30
