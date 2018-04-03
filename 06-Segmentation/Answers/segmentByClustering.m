@@ -1,6 +1,4 @@
-%PRUEBA DE COSAS A MODIFICAR!!!!
-%eliminamos datos porque ocupa tiempo y NO es necesario. 
-function segmentation = segmentByClustering_P( rgbImage, featureSpace, clusteringMethod, numberOfClusters)
+function segmentation = segmentByClustering( rgbImage, featureSpace, clusteringMethod, numberOfClusters)
 if strcmp(clusteringMethod,'hierarchical')
     
     rgbImage=imresize(rgbImage,0.5);
