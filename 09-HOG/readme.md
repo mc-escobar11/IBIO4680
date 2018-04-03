@@ -1,3 +1,4 @@
+Hello Felipe, please check again labs 6, 7 and 8. Thanks!
 
 # HOG Face Detection
 Just like in the last laboratory, we will be using another classic computer vision strategy, namely, the multi-scale HOG descriptor for object detection. Again our codebase will be the VLFeat Library. This time we will switch our attention from generic objects to a far more constrained detection target.

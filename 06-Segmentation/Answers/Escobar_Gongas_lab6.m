@@ -1,11 +1,9 @@
 nombre='BSDS_tiny\24063.jpg';
 clusters=3;
 rgbImage=imread(nombre);
-segm=segmentByClustering( rgbImage, 'rgb', 'kmeans', clusters);
-
+segm=segmentByClustering( rgbImage, 'rgb', 'watershed', clusters);
 path_gt=strcat('BSDS_tiny\24063.mat');
 metric=label_ratio(path_gt,segm );
-toc
 subplot(1,3,1)
 imagesc(rgbImage)
 title('Original image')
